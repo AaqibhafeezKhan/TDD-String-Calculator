@@ -1,75 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>String Calculator Kata | TDD Environment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
-        rel="stylesheet" />
+    <title>String Calculator | POC</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="app-container">
-        <header>
-            <div class="header-content">
-                <h1>String Calculator <span class="badge">KATA</span></h1>
-                <p class="subtitle">
-                    A TDD-driven implementation for numeric string parsing.
-                </p>
+      <header>
+        <h1>String Calculator <span class="badge">Enterprise POC</span></h1>
+        <p class="subtitle">
+          Stable, TDD-validated implementation of numeric parsing logic.
+        </p>
+      </header>
+
+      <main>
+        <div class="main-content">
+          <section class="card">
+            <h2 class="card-title">Calculator Emulator</h2>
+            <label for="numberInput">Input String</label>
+            <textarea
+              id="numberInput"
+              rows="5"
+              placeholder='e.g., 1,2 or "//;\n1;2"'
+            ></textarea>
+            <button id="calculateButton">Calculate Sum</button>
+
+            <div class="output-container">
+              <label>Calculation Result</label>
+              <pre id="outputLog">Awaiting input...</pre>
             </div>
-        </header>
+          </section>
 
-        <main>
-            <section class="calculator-section">
-                <div class="card">
-                    <div class="card-header">
-                        <label for="numberInput">Input numbers</label>
-                        <span class="hint">Supports custom delimiters like //;\n1;2</span>
-                    </div>
-                    <textarea id="numberInput" rows="5" placeholder="1,2,3..."></textarea>
-                    <button id="calculateButton">Calculate Sum</button>
+          <section class="card" style="margin-top: 24px">
+            <h2 class="card-title">Environment Metadata</h2>
+            <p class="subtitle" style="margin-bottom: 12px">
+              Current version uses Vitest for regression testing.
+            </p>
+            <code style="background: #f3f4f6; padding: 12px; display: block; border-radius: 4px; font-size: 13px;">
+              npm test &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Run full test suite<br>
+              vitest watch &nbsp;&nbsp;# TDD mode
+            </code>
+          </section>
+        </div>
 
-                    <div id="outputContainer" class="output-container">
-                        <div class="label">Result</div>
-                        <pre id="outputLog">Ready...</pre>
-                    </div>
+        <aside class="sidebar">
+          <section class="card">
+            <h2 class="card-title">Kata Progression (Steps 1-9)</h2>
+            <div class="steps-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Empty String</h4>
+                  <p><code>""</code> returns <code>0</code></p>
                 </div>
-            </section>
-
-            <aside class="info-section">
-                <div class="card tdd-info">
-                    <h3>TDD Requirements</h3>
-                    <ul class="requirements-list">
-                        <li>Empty string returns 0</li>
-                        <li>Handle multiple numbers</li>
-                        <li>Support \n as delimiter</li>
-                        <li>Support custom delimiters</li>
-                        <li>Negative numbers throw error</li>
-                        <li>Ignore numbers > 1000</li>
-                        <li>Multiple custom delimiters</li>
-                    </ul>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Single Number</h4>
+                  <p><code>"1"</code> returns <code>1</code></p>
                 </div>
-                <div class="card terminal-link">
-                    <h3>Terminal Commands</h3>
-                    <code>npm test</code>
-                    <p>Run Vitest suite</p>
-                    <code>npm run dev</code>
-                    <p>Start dev server</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Two Numbers</h4>
+                  <p><code>"1,2"</code> returns <code>3</code></p>
                 </div>
-            </aside>
-        </main>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Unknown Amount</h4>
+                  <p><code>"1,2,3,4..."</code> handles any count.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h4>New Line Delimiter</h4>
+                  <p><code>"1\n2,3"</code> returns <code>6</code></p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                  <h4>Custom Delimiters</h4>
+                  <p><code>"//;\n1;2"</code> returns <code>3</code></p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                  <h4>Negative Numbers</h4>
+                  <p>Thorws <code>negatives not allowed: -x</code></p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                  <h4>Ignore > 1000</h4>
+                  <p><code>"2,1001"</code> returns <code>2</code></p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                  <h4>Multiple/Any Length</h4>
+                  <p><code>"//[***]\n1***2"</code> or <code>"//[*][%]\n1*2%3"</code></p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
 
-        <footer>
-            <p>Built with Test-Driven Development focus.</p>
-        </footer>
+      <footer>
+        <p>&copy; 2026 String Calculator POC | AaqibhafeezKhan Portfolio</p>
+      </footer>
     </div>
 
     <script type="module" src="script.js"></script>
-</body>
-
+  </body>
 </html>
