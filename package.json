@@ -16,7 +16,8 @@
   "scripts": {
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "vite": "^5.0.0",
