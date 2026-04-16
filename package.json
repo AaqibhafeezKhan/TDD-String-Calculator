@@ -1,7 +1,17 @@
 {
   "name": "tdd-string-calculator",
   "version": "1.0.0",
-  "description": "String Calculator Kata with TDD",
+  "description": "Enterprise-grade TDD String Calculator POC with custom delimiters, multi-character parsing, and automated Vercel deployment.",
+  "keywords": [
+    "tdd",
+    "string-calculator",
+    "kata",
+    "vitest",
+    "javascript",
+    "vercel",
+    "automation",
+    "ci-cd"
+  ],
   "main": "script.js",
   "scripts": {
     "test": "vitest",
