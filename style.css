@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -108,7 +108,7 @@ textarea {
   border-radius: 8px;
   color: var(--text);
   padding: 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1rem;
   resize: vertical;
   margin-bottom: 20px;
@@ -153,7 +153,7 @@ pre#outputLog {
   background: var(--code-bg);
   padding: 20px;
   border-radius: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.1rem;
   min-height: 80px;
   display: flex;
@@ -197,7 +197,7 @@ pre#outputLog.error {
 }
 
 .requirements-list li::before {
-  content: '✓';
+  content: "✓";
   color: var(--success);
   margin-right: 10px;
 }
@@ -207,7 +207,7 @@ pre#outputLog.error {
   background: var(--code-bg);
   padding: 8px;
   border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   margin-bottom: 4px;
   color: var(--primary);
   font-size: 0.9rem;
