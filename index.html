@@ -3,21 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String Calculator Kata</title>
+    <title>String Calculator Kata | TDD Environment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>String Calculator</h1>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>String Calculator <span class="badge">KATA</span></h1>
+                <p class="subtitle">A TDD-driven implementation for numeric string parsing.</p>
+            </div>
+        </header>
 
-    <div class="calculator">
-        <label for="numberInput">Enter numbers:</label>
-        <textarea id="numberInput" rows="4" placeholder="e.g., 1,2 or //;\n1;2 or 1\n2,3"></textarea>
-        <button id="calculateButton">Calculate Sum</button>
+        <main>
+            <section class="calculator-section">
+                <div class="card">
+                    <div class="card-header">
+                        <label for="numberInput">Input numbers</label>
+                        <span class="hint">Supports custom delimiters like //;\n1;2</span>
+                    </div>
+                    <textarea id="numberInput" rows="5" placeholder="1,2,3..."></textarea>
+                    <button id="calculateButton">Calculate Sum</button>
+                    
+                    <div id="outputContainer" class="output-container">
+                        <div class="label">Result</div>
+                        <pre id="outputLog">Ready...</pre>
+                    </div>
+                </div>
+            </section>
 
-        <h2>Output Log:</h2>
-        <pre id="outputLog"></pre>
+            <aside class="info-section">
+                <div class="card tdd-info">
+                    <h3>TDD Requirements</h3>
+                    <ul class="requirements-list">
+                        <li>Empty string returns 0</li>
+                        <li>Handle multiple numbers</li>
+                        <li>Support \n as delimiter</li>
+                        <li>Support custom delimiters</li>
+                        <li>Negative numbers throw error</li>
+                        <li>Ignore numbers > 1000</li>
+                        <li>Multiple custom delimiters</li>
+                    </ul>
+                </div>
+                <div class="card terminal-link">
+                    <h3>Terminal Commands</h3>
+                    <code>npm test</code>
+                    <p>Run Vitest suite</p>
+                    <code>npm run dev</code>
+                    <p>Start dev server</p>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Built with Test-Driven Development focus.</p>
+        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
